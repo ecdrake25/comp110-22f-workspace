@@ -2,9 +2,9 @@
 
 __author__ = "730467957"
 
-def contains_char(searched_through: str, single_char: str) -> bool:
-    """Searching a guessed word for a character"""
 
+def contains_char(searched_through: str, single_char: str) -> bool:
+    """Searching a guessed word for a character."""
     index: int = 0
     assert len(single_char) == 1
 
@@ -14,6 +14,7 @@ def contains_char(searched_through: str, single_char: str) -> bool:
         else:
             index += 1
     return False
+
 
 def emojified(guess: str, secret: str) -> str:
     """Adding emojis for the presence of letters."""
@@ -35,7 +36,9 @@ def emojified(guess: str, secret: str) -> str:
         index += 1
     return emoji
 
+
 def input_guess(expected_length: int) -> str:
+    """Verify length of guess."""
     guess: str = input(f"Enter a { expected_length } character word: ")
 
     while len(guess) != expected_length:
@@ -43,12 +46,13 @@ def input_guess(expected_length: int) -> str:
     
     return guess
 
+
 def main() -> None:
     """The entrypoint of the program and main game."""
     secret: str = "codes"
     turn: int = 1
     won: bool = False
-    while turn <= 6 and won != True:
+    while turn <= 6 and not won:
         print(f"=== Turn { turn }/6 ===")
         guess = input_guess(len(secret))
         print(emojified(guess, secret))
@@ -58,8 +62,9 @@ def main() -> None:
         else:
             turn += 1
         
-    if won == False:
+    if not won:
         print("X/6 - Sorry, try again tomorrow!")
+
 
 if __name__ == "__main__":
     main()
