@@ -5,6 +5,8 @@ __author__ = "730467957"
 
 def all(haystack: list[int], needle: int) -> bool:
     """Checking list for given int."""
+    if len(haystack) == 0:
+        return False
     index: int = 0
     while index < len(haystack):
         if needle == haystack[index]:
@@ -31,6 +33,8 @@ def max(input: list[int]) -> int:
 
 def is_equal(one: list[int], two: list[int]) -> bool:
     """Checking for equal lists."""
+    if len(one) != len(two):
+        return False
     i: int = 0
     while i < len(one) and i < len(two):
         if one[i] == two[i]:
