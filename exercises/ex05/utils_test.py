@@ -7,6 +7,7 @@ from utils import only_evens
 from utils import sub
 from utils import concat
 
+
 def test_only_evens_empty() -> None:
     """Tests an empty list."""
     x: list[int] = []
@@ -71,7 +72,7 @@ def test_sub_end() -> None:
 
 
 def test_sub_0() -> None:
-    """End is at most 0"""
+    """End is at most 0."""
     a: list[int] = [2, 4, 6, 8]
     b: int = 1
     c: int = 0

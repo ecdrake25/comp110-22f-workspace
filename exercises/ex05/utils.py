@@ -2,6 +2,7 @@
 
 __author__ = "730467957"
 
+
 def only_evens(x: list[int]) -> list[int]:
     """Returns only the even elements of input parameter."""
     i: int = 0
@@ -14,6 +15,7 @@ def only_evens(x: list[int]) -> list[int]:
 
 
 def concat(x: list[int], y: list[int]) -> list[int]:
+    """Combines two lists."""
     i: int = 0
     new: list[int] = list()
     while i < len(x):
@@ -28,7 +30,7 @@ def concat(x: list[int], y: list[int]) -> list[int]:
 
 
 def sub(a: list[int], b: int, c: int) -> list[int]:
-    i: int = 0
+    """Creates new list containing certain indices."""
     outcome: list[int] = list()
     if b < 0:
         b = 0
