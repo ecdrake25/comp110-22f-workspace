@@ -30,7 +30,7 @@ HAND: str = "\U000FEF0F"
 def greet() -> None:
     """Greet the player."""
     global player
-    print("Welcome! Today you will be taking care of a pet and recieving a score of your performance")
+    print("Welcome! Today you will be taking care of a pet and recieving a score of your performance.")
     player = input("What is your name? ")
 
 
