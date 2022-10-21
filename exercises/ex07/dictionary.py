@@ -12,7 +12,7 @@ def invert(k: dict[str, str]) -> dict[str, str]:
 
     for key in k:
         if k[key] in frequency:
-            frequency [k[key]] += 1
+            frequency[k[key]] += 1
         else:
             frequency[k[key]] = 1
 
@@ -40,11 +40,11 @@ def max(input: list[int]) -> int:
 
 def favorite_color(x: dict[str, str]) -> str:
     """Determines the color that appears the most frequently."""
-    i: int = 0
     tracker: dict[str, int] = {}
     numbers: list[int] = []
     if x == {}:
-        return {}
+        return ""
+
     for key in x:
         if x[key] in tracker:
             tracker[x[key]] += 1
@@ -54,18 +54,21 @@ def favorite_color(x: dict[str, str]) -> str:
     for key in tracker:
         numbers.append(tracker[key])
 
-    maximum : int = max(numbers)
-
+    maximum: int = max(numbers)
+    output_key: str = ""
+    
     for key in tracker:
-        if maximum == tracker[key]:
+        if tracker[key] == maximum:
             return key
+    
+    return output_key
 
     
 def count(x: list[str]) -> dict[str, int]:
     """Count of the number of times the value appeared."""
     outcome: dict[str, int] = {}
     if x == []:
-        return []
+        return {}
 
     for item in x:
         if item in outcome:
